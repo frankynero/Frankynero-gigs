@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Frankynero Gigs</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0b0b0b;
+      color: white;
+    }
+
+    header {
+      padding: 60px 20px 40px;
+      text-align: center;
+      background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
+      border-bottom: 1px solid #222;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #00ffcc;
+    }
+
+    header p {
+      margin-top: 10px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .gig {
+      background: #141414;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 15px;
+      transition: 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .gig:hover {
+      transform: translateY(-3px);
+      border-color: #00ffcc;
+      box-shadow: 0 10px 25px rgba(0,255,204,0.1);
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .date {
+      font-weight: 700;
+      color: #00ffcc;
+      font-size: 16px;
+    }
+
+    .venue {
+      font-size: 15px;
+      color: #fff;
+    }
+
+    .location {
+      font-size: 13px;
+      color: #888;
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 20px;
+      background: rgba(0,255,204,0.1);
+      color: #00ffcc;
+      border: 1px solid rgba(0,255,204,0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #555;
+      font-size: 12px;
+      border-top: 1px solid #222;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .gig {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Frankynero</h1>
+  <p>Live Gigs • Appearances • Events</p>
+</header>
+
+<div class="container" id="gig-list"></div>
+
+<footer>
+  Official Gig Page • Built with Acode
+</footer>
+
+<script>
+  const gigs = [
+    { date: "9 May 2026 7.30pm", venue: "Lansdowne inn, 22-24 South Street", location: "Torquay TQ2 5AA", type: "LIVE PERFORMANCE" },
+    { date: "17th April 2026 8pm", venue: "Blockhouse Pub", location: "Devonport Road Stoke Village Plymouth PLD 4DL", type: "LIVE PERFORMANCE" },
+    { date: "15th May 2026 9pm", venue: "Seamus O Donnells Irish Bar", location: "28 Victoria Parade The Habourside Torquay TQ2 5AA", type: "LIVE PERFORMANCE"},
+    { date: "29th May 2026 8.30pm", venue: "The Brunell Inn", location: "83 Forestreet Saltash PL12 6AE", type: "LIVE PERFORMANCE"},
+    { date: "24th July 2026 8.30pm", venue: "The Brunell Inn", location: "83 Forestreet Saltash PL12 6AE", type: "LIVE PERFORMANCE"},
+    { date: "7th August 2026 8.30pm", venue: "Albemarle Pub", location: "Budshead Road Pl5 4DD", type: "LIVE PERFORMANCE" },
+    { date: "28th August 2026 9pm", venue: "Seamus O Donnells Irish Bar", location: "28 Victoria Parade The Habourside Torquay TQ2 5AA", type: "LIVE PERFORMANCE"},
+    { date: "4th September 2026 9pm", venue: "Seamus O Donnells Irish Bar", location: "28 Victoria Parade The Habourside Torquay TQ2 5AA", type: "LIVE PERFORMANCE"  },
+    { date: "25 May 2026", venue: "The Underground", location: "London", type: "LIVE PERFORMANCE" },
+    { date: "20th November 2026 9pm", venue: "Seamus O Donnells Irish Bar", location: "28 Victoria Parade The Habourside Torquay TQ2 5AA", type: "LIVE PERFORMANCE"  }
+  ];
+
+  const container = document.getElementById("gig-list");
+
+  function loadGigs() {
+    container.innerHTML = "";
+
+    gigs.forEach(gig => {
+      const div = document.createElement("div");
+      div.className = "gig";
+
+      div.innerHTML = `
+        <div class="left">
+          <div class="date">${gig.date}</div>
+          <div class="venue">${gig.venue}</div>
+          <div class="location">${gig.location}</div>
+        </div>
+        <div class="tag">${gig.type}</div>
+      `;
+
+      container.appendChild(div);
+    });
+  }
+
+  loadGigs();
+</script>
+
+</body>
+</html>
