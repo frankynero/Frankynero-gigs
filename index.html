@@ -7,42 +7,84 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+    
+    <div class="socials">
+    <a href="https://instagram.com/yourusername" target="_blank">
+    <i class="fab fa-instagram"></i>
+    </a>
+
+  <a href="https://youtube.com/yourchannel" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+
+  <a href="https://tiktok.com/@yourusername" target="_blank">
+    <i class="fab fa-tiktok"></i>
+  </a>
+</div>
+
 
     body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  color: white;
-
-  background-image:
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-    url('Polish_20260411_190820177.png');
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0b0b0b;
+      color: white;
+    }
 
     header {
-      padding: 60px 20px 40px;
+      padding: 80px 20px 60px;
       text-align: center;
-      background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+                  url('https://images.unsplash.com/photo-1511379938547-c1f69419868d');
+      background-size: cover;
+      background-position: center;
       border-bottom: 1px solid #222;
-
-      <div class="container" id="gig-list"></div>
-
     }
 
     header h1 {
       margin: 0;
-      font-size: 42px;
+      font-size: 44px;
       font-weight: 800;
-      letter-spacing: 1px;
       color: #00ffcc;
     }
 
     header p {
       margin-top: 10px;
-      color: #aaa;
+      color: #ccc;
       font-size: 14px;
+    }
+
+    ..socials {
+      margin-top: 20px;
+    }
+
+    .socials a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #00ffcc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+  .socials a:hover {
+  color: white;
+  transform: scale(1.2);
+}
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 20px;
+      border-radius: 25px;
+      background: #00ffcc;
+      color: black;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00ddb3;
     }
 
     .container {
@@ -78,11 +120,9 @@
     .date {
       font-weight: 700;
       color: #00ffcc;
-      font-size: 16px;
     }
 
     .venue {
-      font-size: 15px;
       color: #fff;
     }
 
@@ -123,32 +163,38 @@
 
 <header>
   <h1>Frankynero</h1>
-  <p>Live Gigs • Appearances • Events</p>
+  <p>Live Performances • Bookings • Events</p>
+
+  <a href="https://instagram.com/yourusername" target="_blank">📸 Instagram</a>
+<a href="https://youtube.com/yourchannel" target="_blank">▶️ YouTube</a>
+<a href="https://tiktok.com/@yourusername" target="_blank">🎵 TikTok</a>
 </header>
 
+<div class="container" id="gig-list"></div>
+
 <footer>
-  Official Gig Page • Built with Acode
+  Official Gig Page
 </footer>
 
 <script>
   const gigs = [
-  { date: "17 Apr 2026 • 8:00PM", venue: "Blockhouse Pub", location: "Devonport Rd, Stoke Village, Plymouth PL1 4DL", type: "LIVE" },
+  { date: "17 Apr 2026 • 8:00PM", venue: "Blockhouse Pub", location: "Devonport Rd, Stoke Village, Plymouth PL1 4DL", type: "LIVE PERMANCE" },
 
-  { date: "09 May 2026 • 7:30PM", venue: "Lansdowne Inn", location: "22–24 South St, Torquay TQ2 5AA", type: "LIVE" },
+  { date: "09 May 2026 • 7:30PM", venue: "Lansdowne Inn", location: "22–24 South St, Torquay TQ2 5AA", type: "LIVE PERMANCE" },
 
-  { date: "15 May 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE" },
+  { date: "15 May 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE PERMANCE" },
 
-  { date: "29 May 2026 • 8:30PM", venue: "The Brunel Inn", location: "83 Fore St, Saltash PL12 6AE", type: "LIVE" },
+  { date: "29 May 2026 • 8:30PM", venue: "The Brunel Inn", location: "83 Fore St, Saltash PL12 6AE", type: "LIVE PERMANCE" },
 
-  { date: "24 Jul 2026 • 8:30PM", venue: "The Brunel Inn", location: "83 Fore St, Saltash PL12 6AE", type: "LIVE" },
+  { date: "24 Jul 2026 • 8:30PM", venue: "The Brunel Inn", location: "83 Fore St, Saltash PL12 6AE", type: "LIVE PERMANCE" },
 
-  { date: "07 Aug 2026 • 8:30PM", venue: "Albemarle Pub", location: "Budshead Rd, Plymouth PL5 4DD", type: "LIVE" },
+  { date: "07 Aug 2026 • 8:30PM", venue: "Albemarle Pub", location: "Budshead Rd, Plymouth PL5 4DD", type: "LIVE PERMANCE" },
 
-  { date: "28 Aug 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE" },
+  { date: "28 Aug 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE PERMANCE" },
 
-  { date: "04 Sep 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE" },
+  { date: "04 Sep 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE PERMANCE" },
 
-  { date: "20 Nov 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE" }
+  { date: "20 Nov 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE PERMANCE" }
 ];
 
   const container = document.getElementById("gig-list");
