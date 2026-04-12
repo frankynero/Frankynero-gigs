@@ -7,21 +7,6 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
-    
-    <div class="socials">
-    <a href="https://instagram.com/yourusername" target="_blank">
-    <i class="fab fa-instagram"></i>
-    </a>
-
-  <a href="https://youtube.com/yourchannel" target="_blank">
-    <i class="fab fa-youtube"></i>
-  </a>
-
-  <a href="https://tiktok.com/@yourusername" target="_blank">
-    <i class="fab fa-tiktok"></i>
-  </a>
-</div>
-
 
     body {
       margin: 0;
@@ -31,60 +16,24 @@
     }
 
     header {
-      padding: 80px 20px 60px;
+      padding: 60px 20px 40px;
       text-align: center;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-                  url('https://images.unsplash.com/photo-1511379938547-c1f69419868d');
-      background-size: cover;
-      background-position: center;
+      background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
       border-bottom: 1px solid #222;
     }
 
     header h1 {
       margin: 0;
-      font-size: 44px;
+      font-size: 42px;
       font-weight: 800;
+      letter-spacing: 1px;
       color: #00ffcc;
     }
 
     header p {
       margin-top: 10px;
-      color: #ccc;
+      color: #aaa;
       font-size: 14px;
-    }
-
-    ..socials {
-      margin-top: 20px;
-    }
-
-    .socials a {
-  margin: 0 10px;
-  font-size: 24px;
-  color: #00ffcc;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-  .socials a:hover {
-  color: white;
-  transform: scale(1.2);
-}
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 20px;
-      border-radius: 25px;
-      background: #00ffcc;
-      color: black;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #00ddb3;
     }
 
     .container {
@@ -120,9 +69,11 @@
     .date {
       font-weight: 700;
       color: #00ffcc;
+      font-size: 16px;
     }
 
     .venue {
+      font-size: 15px;
       color: #fff;
     }
 
@@ -163,39 +114,28 @@
 
 <header>
   <h1>Frankynero</h1>
-  <p>Live Performances • Bookings • Events</p>
-
-  <a href="https://instagram.com/yourusername" target="_blank">📸 Instagram</a>
-<a href="https://youtube.com/yourchannel" target="_blank">▶️ YouTube</a>
-<a href="https://tiktok.com/@yourusername" target="_blank">🎵 TikTok</a>
+  <p>Live Gigs • Appearances • Events</p>
 </header>
 
 <div class="container" id="gig-list"></div>
 
 <footer>
-  Official Gig Page
+  Official Gig Page • Built with Acode
 </footer>
 
 <script>
   const gigs = [
-  { date: "17 Apr 2026 • 8:00PM", venue: "Blockhouse Pub", location: "Devonport Rd, Stoke Village, Plymouth PL1 4DL", type: "LIVE PERMANCE" },
-
-  { date: "09 May 2026 • 7:30PM", venue: "Lansdowne Inn", location: "22–24 South St, Torquay TQ2 5AA", type: "LIVE PERMANCE" },
-
-  { date: "15 May 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE PERMANCE" },
-
-  { date: "29 May 2026 • 8:30PM", venue: "The Brunel Inn", location: "83 Fore St, Saltash PL12 6AE", type: "LIVE PERMANCE" },
-
-  { date: "24 Jul 2026 • 8:30PM", venue: "The Brunel Inn", location: "83 Fore St, Saltash PL12 6AE", type: "LIVE PERMANCE" },
-
-  { date: "07 Aug 2026 • 8:30PM", venue: "Albemarle Pub", location: "Budshead Rd, Plymouth PL5 4DD", type: "LIVE PERMANCE" },
-
-  { date: "28 Aug 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE PERMANCE" },
-
-  { date: "04 Sep 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE PERMANCE" },
-
-  { date: "20 Nov 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE PERMANCE" }
-];
+    { date: "9 May 2026 7.30pm", venue: "Lansdowne inn, 22-24 South Street", location: "Torquay TQ2 5AA", type: "LIVE PERFORMANCE" },
+    { date: "17th April 2026 8pm", venue: "Blockhouse Pub", location: "Devonport Road Stoke Village Plymouth PLD 4DL", type: "LIVE PERFORMANCE" },
+    { date: "15th May 2026 9pm", venue: "Seamus O Donnells Irish Bar", location: "28 Victoria Parade The Habourside Torquay TQ2 5AA", type: "LIVE PERFORMANCE"},
+    { date: "29th May 2026 8.30pm", venue: "The Brunell Inn", location: "83 Forestreet Saltash PL12 6AE", type: "LIVE PERFORMANCE"},
+    { date: "24th July 2026 8.30pm", venue: "The Brunell Inn", location: "83 Forestreet Saltash PL12 6AE", type: "LIVE PERFORMANCE"},
+    { date: "7th August 2026 8.30pm", venue: "Albemarle Pub", location: "Budshead Road Pl5 4DD", type: "LIVE PERFORMANCE" },
+    { date: "28th August 2026 9pm", venue: "Seamus O Donnells Irish Bar", location: "28 Victoria Parade The Habourside Torquay TQ2 5AA", type: "LIVE PERFORMANCE"},
+    { date: "4th September 2026 9pm", venue: "Seamus O Donnells Irish Bar", location: "28 Victoria Parade The Habourside Torquay TQ2 5AA", type: "LIVE PERFORMANCE"  },
+    { date: "25 May 2026", venue: "The Underground", location: "London", type: "LIVE PERFORMANCE" },
+    { date: "20th November 2026 9pm", venue: "Seamus O Donnells Irish Bar", location: "28 Victoria Parade The Habourside Torquay TQ2 5AA", type: "LIVE PERFORMANCE"  }
+  ];
 
   const container = document.getElementById("gig-list");
 
