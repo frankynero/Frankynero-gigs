@@ -88,6 +88,11 @@
       border-color: #00ffcc;
       box-shadow: 0 10px 25px rgba(0,255,204,0.1);
     }
+    .gig {
+      text-decoration: none;
+      color: inherit;
+      1 display: flex;
+      }
 
     .left {
       display: flex;
@@ -160,23 +165,40 @@
 
 <script>
   const gigs = [
-  { date: "17 Apr 2026 • 8:00PM", venue: "Blockhouse Pub", location: "Devonport Rd, Stoke Village, Plymouth PL1 4DL", type: "LIVE PERFORMANCE" },
+  { date: "17 Apr 2026 • 8:00PM", venue: "Blockhouse Pub", location: "Devonport Rd, Stoke Village, Plymouth PL1 4DL",
+    link: "https://devon.pub/blockhouse-inn-plymouth/", type: "LIVE PERFORMANCE"
+     },
 
-  { date: "09 May 2026 • 7:30PM", venue: "Lansdowne Inn", location: "22–24 South St, Torquay TQ2 5AA", type: "LIVE PERFORMANCE" },
+  { date: "09 May 2026 • 7:30PM", venue: "Lansdowne Inn", location: "22–24 South St, Torquay TQ2 5AA", 
+    link:" https://www.craftunionpubs.com/lansdowne-torquay?utm_source=gmb&utm_medium=organic&utm_campaign=homepage",
+    type: "LIVE PERFORMANCE" },
 
-  { date: "15 May 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE PERFORMANCE" },
+  { date: "15 May 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA",
+      link:"https://www.englishriviera.co.uk/food-and-drink/seamus-odonnells-torquay-p3692363",
+      type: "LIVE PERFORMANCE" },
 
-  { date: "29 May 2026 • 8:30PM", venue: "The Brunel Inn", location: "83 Fore St, Saltash PL12 6AE", type: "LIVE PERFORMANCE" },
+  { date: "29 May 2026 • 8:30PM", venue: "The Brunel Inn", location: "83 Fore St, Saltash PL12 6AE",
+    link:"https://www.brunelsaltash.co.uk/",  type: "LIVE PERFORMANCE" },
 
-  { date: "24 Jul 2026 • 8:30PM", venue: "The Brunel Inn", location: "83 Fore St, Saltash PL12 6AE", type: "LIVE PERFORMANCE" },
+  { date: "24 Jul 2026 • 8:30PM", venue: "The Brunel Inn", location: "83 Fore St, Saltash PL12 6AE", 
+    link:"https://www.brunelsaltash.co.uk/",
+    type: "LIVE PERFORMANCE" },
 
-  { date: "07 Aug 2026 • 8:30PM", venue: "Albemarle Pub", location: "Budshead Rd, Plymouth PL5 4DD", type: "LIVE PERFORMANCE" },
+  { date: "07 Aug 2026 • 8:30PM", venue: "Albemarle Pub", location: "Budshead Rd, Plymouth PL5 4DD", 
+  link: "https://www.facebook.com/share/1Aki35Sq4a/",
+  type: "LIVE PERFORMANCE" },
 
-  { date: "28 Aug 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE PERFORMANCE" },
+  { date: "28 Aug 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA",
+    link:"https://www.englishriviera.co.uk/food-and-drink/seamus-odonnells-torquay-p3692363",
+  type: "LIVE PERFORMANCE" },
 
-  { date: "04 Sep 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE PERFORMANCE" },
+  { date: "04 Sep 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA",
+    link:"https://www.englishriviera.co.uk/food-and-drink/seamus-odonnells-torquay-p3692363",
+    type: "LIVE PERFORMANCE" },
 
-  { date: "20 Nov 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA", type: "LIVE PERFORMANCE" }
+  { date: "20 Nov 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA",
+    link:"https://www.englishriviera.co.uk/food-and-drink/seamus-odonnells-torquay-p3692363",
+  type: "LIVE PERFORMANCE" }
   ];
 
   const container = document.getElementById("gig-list");
@@ -185,8 +207,10 @@
     container.innerHTML = "";
 
     gigs.forEach(gig => {
-      const div = document.createElement("div");
-      div.className = "gig";
+      const div = document.createElement("a");
+        div.className = "gig";
+        div.href = gig.link;
+        div.target = "_blank";
 
       div.innerHTML = `
         <div class="left">
