@@ -162,6 +162,10 @@
 
 <div class="container" id="gig-list"></div>
 
+<div id="view-counter" style="text-align:center; margin-top:20px; color:#888;">
+  Loading views...
+</div>
+
 <footer>
     Official Gig page by El-Elyon Productions
     
@@ -170,47 +174,73 @@
 <script>
   const gigs = [
   { date: "17 Apr 2026 • 8:00PM", venue: "Blockhouse Pub", location: "Devonport Rd, Stoke Village, Plymouth PL1 4DL",
-    link: "https://devon.pub/blockhouse-inn-plymouth/", type: "LIVE PERFORMANCE"
+    link: "https://devon.pub/blockhouse-inn-plymouth/", type: "LIVE PERFORMANCE",
+      dateObj: "2026-04-17T20:00:00"
      },
 
   { date: "09 May 2026 • 7:30PM", venue: "Lansdowne Inn", location: "22–24 South St, Torquay TQ2 5AA", 
     link:" https://www.craftunionpubs.com/lansdowne-torquay?utm_source=gmb&utm_medium=organic&utm_campaign=homepage",
-    type: "LIVE PERFORMANCE" },
+    type: "LIVE PERFORMANCE",
+    dateObj: "2026-04-17T20:00:00"
+      },
 
   { date: "15 May 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA",
       link:"https://www.englishriviera.co.uk/food-and-drink/seamus-odonnells-torquay-p3692363",
+      dateObj: "2026-04-17T20:00:00",
       type: "LIVE PERFORMANCE" },
 
   { date: "29 May 2026 • 8:30PM", venue: "The Brunel Inn", location: "83 Fore St, Saltash PL12 6AE",
-    link:"https://www.brunelsaltash.co.uk/",  type: "LIVE PERFORMANCE" },
+    link:"https://www.brunelsaltash.co.uk/",
+    dateObj: "2026-04-17T20:00:00",
+    type: "LIVE PERFORMANCE" },
 
   { date: "24 Jul 2026 • 8:30PM", venue: "The Brunel Inn", location: "83 Fore St, Saltash PL12 6AE", 
     link:"https://www.brunelsaltash.co.uk/",
+    dateObj: "2026-04-17T20:00:00",
     type: "LIVE PERFORMANCE" },
 
   { date: "07 Aug 2026 • 8:30PM", venue: "Albemarle Pub", location: "Budshead Rd, Plymouth PL5 4DD", 
   link: "https://www.facebook.com/share/1Aki35Sq4a/",
-  type: "LIVE PERFORMANCE" },
+    dateObj: "2026-04-17T20:00:00",
+  type: "LIVE" },
 
   { date: "28 Aug 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA",
     link:"https://www.englishriviera.co.uk/food-and-drink/seamus-odonnells-torquay-p3692363",
-  type: "LIVE PERFORMANCE" },
+    dateObj: "2026-04-17T20:00:00",
+  type: "LIVE" },
 
   { date: "04 Sep 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA",
     link:"https://www.englishriviera.co.uk/food-and-drink/seamus-odonnells-torquay-p3692363",
-    type: "LIVE PERFORMANCE" },
+      dateObj: "2026-04-17T20:00:00",
+    type: "LIVE" },
 
   { date: "20 Nov 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA",
     link:"https://www.englishriviera.co.uk/food-and-drink/seamus-odonnells-torquay-p3692363",
+      dateObj: "2026-04-17T20:00:00",
   type: "LIVE PERFORMANCE" }
   ];
 
-  const container = document.getElementById("gig-list");
 
-  function loadGigs() {
-    container.innerHTML = "";
+    const container = document.getElementById("gig-list");
+  
+      const now = new Date();
 
-    gigs.forEach(gig => {
+      let nextGig = null;
+
+      gigs.forEach(gig => {
+  const gigDate = new Date(gig.dateObj);
+
+  if (gigDate > now) {
+    if (!nextGig || gigDate < new Date(nextGig.dateObj)) {
+      nextGig = gig;
+    }
+  }
+});
+
+      function loadGigs() {
+        container.innerHTML = "";
+
+      gigs.forEach(gig => {
       const div = document.createElement("a");
         div.className = "gig";
         div.href = gig.link;
@@ -222,14 +252,40 @@
           <div class="venue">${gig.venue}</div>
           <div class="location">${gig.location}</div>
         </div>
-        <div class="tag">${gig.type}</div>
+        <div class="tag">
+  ${
+    gig === nextGig
+      ? "🔥 NEXT SHOW"
+      : gig.type === "SPECIAL"
+      ? "⭐ SPECIAL"
+      : "🎤 LIVE PERFORMANCE"
+  }
+</div>
       `;
 
       container.appendChild(div);
     });
-  }
-
-  loadGigs();
+    }
+    gigs.sort((a, b) => {
+  return new Date(a.dateObj) - new Date(b.dateObj);
+});
+    loadGigs();
+  
+  ///// this part is the page counter
+  
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("https://api.countapi.xyz/update/frankynero/gigpage/?amount=1")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("view-counter").innerText =
+        "Page Views: " + data.value;
+    })
+    .catch(() => {
+      document.getElementById("view-counter").innerText =
+        "Counter error";
+    });
+});
+  ///// end of page counter 
 </script>
 
 </body>
