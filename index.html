@@ -162,11 +162,13 @@
 
 <div class="container" id="gig-list"></div>
 
-<div id="view-counter" style="text-align:center; margin-top:20px; color:#888;">
-  Loading views...
-</div>
 
 <footer>
+  
+<div style="text-align:center; margin-top:20px;">
+  <img src="https://hitwebcounter.com/counter/counter.php?page=112233445566&style=0006&nbdigits=5&type=page&initCount=0" title="Page Views" Alt="Page Views" />
+</div>
+  
     Official Gig page by El-Elyon Productions
     
 </footer>
@@ -270,22 +272,6 @@
   return new Date(a.dateObj) - new Date(b.dateObj);
 });
     loadGigs();
-  
-  ///// this part is the page counter
-  
-document.addEventListener("DOMContentLoaded", function () {
-  fetch("https://api.countapi.xyz/update/frankynero/gigpage/?amount=1")
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById("view-counter").innerText =
-        "Page Views: " + data.value;
-    })
-    .catch(() => {
-      document.getElementById("view-counter").innerText =
-        "Counter error";
-    });
-});
-  ///// end of page counter 
 </script>
 
 </body>
