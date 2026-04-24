@@ -71,47 +71,45 @@
       padding: 30px 20px;
     }
 
-    .gig {
-      background: #141414;
-      border: 1px solid #222;
-      border-radius: 12px;
-      padding: 18px;
-      margin-bottom: 15px;
-      transition: 0.3s ease;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .gig:hover {
-      transform: translateY(-3px);
-      border-color: #00ffcc;
-      box-shadow: 0 10px 25px rgba(0,255,204,0.1);
-    }
-    .gig {
-      text-decoration: none;
-      color: inherit;
-      1 display: flex;
+        .gig {
+        text-decoration: #890;
+        color: #999;
+        display: flex;
+        background: #141414;
+        border: 1px solid #222;
+        border-radius: 30px;
+        padding: 18px;
+        margin-bottom: 5px;
       }
-
-    .left {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .date {
-      font-weight: 700;
-      color: #00ffcc;
-    }
+      
+      .gig h3 {
+        margin: 0;
+      }
+      
+      .gig p {
+        margin: 2px 0;
+        line-height: 1.2;
+      }
+      
+      .left {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+      }
+          }
+      
+          .date {
+            font-weight: 700;
+            color: #00ffcc;
+          }
 
     .venue {
-      color: #fff;
+      color: #99f;
     }
 
     .location {
-      font-size: 13px;
-      color: #888;
+      font-size: 9px;
+      color: #999;
     }
 
     .tag {
@@ -170,36 +168,40 @@
         }
             
     
-    .bio {
-      text-align: center;
-      max-width: 600px;
-      margin: 15px auto 30px;
-      font-size: 14px;
-      color: #ccc990;
-      line-height: 1.6;
-      }
-
-    @media (max-width: 600px) {
-      .gig {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
+          .bio {
+            text-align: center;
+            max-width: 600px;
+            margin: 15px auto 30px;
+            font-size: 14px;
+            color: #ccc990;
+            line-height: 1.6;
+            }
+            
+              .past {
+            opacity: 0.5;
+            color: #aa9; }
       
-    .counter-box img {
-        filter: brightness(1.2);
-        opacity: 0.9;
-        }
+          @media (max-width: 600px) {
+            .gig {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 10px;
+            }
+            
+          .counter-box img {
+              filter: brightness(1.2);
+              opacity: 0.9;
+              }
+            
+            }
+        </style>
+      </head>
       
-      }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>Frankynero</h1>
-  <p>Live Performances • Bookings • Events</p>
+      <body>
+      
+      <header>
+        <h1>Frankynero</h1>
+        <p>Live Performances • Bookings • Events</p>
   
 
     <div class="socials">
@@ -243,6 +245,19 @@
         frameborder="0" 
         allowfullscreen>
         </iframe>
+    
+    
+      </div>
+      
+      <div class="media-section">
+      <h2>🎵 Music</h2>
+    
+      <audio controls style="width:100%;">
+        <source src="your-song.mp3" type="audio/mpeg">
+      </audio>
+      </div>
+
+
 
 
     <footer>
@@ -257,88 +272,109 @@
 </footer>
 
     
-
 <script>
-  const gigs = [
-      { date: "17 Apr 2026 • 8:00PM", venue: "Blockhouse Pub", location: "Devonport Rd, Stoke Village, Plymouth PL1 4DL",
-        link: "https://devon.pub/blockhouse-inn-plymouth/", type: "LIVE PERFORMANCE",
-        dateObj: "2026-04-17T20:00:00"
-         },
-         
-        { date: "22 April 2026 • 6:00PM", venue: "Room 5", location: "Unit 16, White River Place, Saint Austell PL25 5AZ", 
-        link:"https://share.google/RhzjAXdC5lCCHqSi5",
-        type: "WITH BAND",
-        dateObj: "2026-04-17T20:00:00"
-        },
-         
-       { date: "09 May 2026 • 7:30PM", venue: "Lansdowne Inn", location: "22–24 South St, Torquay TQ2 5AA", 
-      link:" https://www.craftunionpubs.com/lansdowne-torquay?utm_source=gmb&utm_medium=organic&utm_campaign=homepage",
-      type: "LIVE PERFORMANCE",
-        dateObj: "2026-04-17T20:00:00"
-        },
+const gigs = [
+  { date: "17 Apr 2026 • 8:00PM", venue: "Blockhouse Pub",
+    location: "Devonport Rd, Stoke Village, Plymouth PL1 4DL",
+    link: "https://devon.pub/blockhouse-inn-plymouth/",
+    type: "LIVE PERFORMANCE",
+    dateObj: "2026-04-17T20:00:00"
+  },
 
-      { date: "15 May 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA",
-      link:"https://www.englishriviera.co.uk/food-and-drink/seamus-odonnells-torquay-p3692363",
-      dateObj: "2026-04-17T20:00:00",
-      type: "LIVE PERFORMANCE" },
-     
-     { date: "29 May 2026 • 8:30PM", venue: "The Brunel Inn", location: "83 Fore St, Saltash PL12 6AE",
-       link:"https://www.brunelsaltash.co.uk/",
-       dateObj: "2026-04-17T20:00:00",
-       type: "LIVE PERFORMANCE" },
-      
-        { date: "17th June 2026 6.30pm", venue: "Room 5", location: "Unit 16, White River Place, Saint Austell PL25 5AZ", 
-        link: "https://share.google/RhzjAXdC5lCCHqSi5",
-        type: "LIVE PERFORMANCE",
-          dateObj: "2026-04-17T20:00:00"
-         },
-     
-     { 
-    date: "15th July 2026 6.30pm", venue: "Room 5", location: "Unit 16, White River Place, Saint Austell PL25 5AZ", type: "LIVE PERFORMANCE",
-      dateObj: "2026-04-17T20:00:00"
-    
-        },
+  { date: "22 April 2026 • 6:00PM", venue: "Room 5",
+    location: "Unit 16, White River Place, Saint Austell PL25 5AZ",
+    link: "https://share.google/RhzjAXdC5lCCHqSi5",
+    type: "WITH BAND",
+    dateObj: "2026-04-22T18:00:00"
+  },
 
-  { date: "24 Jul 2026 • 8:30PM", venue: "The Brunel Inn", location: "83 Fore St, Saltash PL12 6AE", 
-    link:"https://www.brunelsaltash.co.uk/",
-    dateObj: "2026-04-17T20:00:00",
-    type: "LIVE PERFORMANCE" },
+  { date: "09 May 2026 • 7:30PM", venue: "Lansdowne Inn",
+    location: "22–24 South St, Torquay TQ2 5AA",
+    link: "https://www.craftunionpubs.com/lansdowne-torquay",
+    type: "LIVE PERFORMANCE",
+    dateObj: "2026-05-09T19:30:00"
+  },
 
-  { date: "07 Aug 2026 • 8:30PM", venue: "Albemarle Pub", location: "Budshead Rd, Plymouth PL5 4DD", 
-  link: "https://www.facebook.com/share/1Aki35Sq4a/",
-    dateObj: "2026-04-17T20:00:00",
-  type: "LIVE" },
+  { date: "15 May 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar",
+    location: "28 Victoria Parade, Torquay TQ2 5AA",
+    link: "https://www.englishriviera.co.uk/food-and-drink/seamus-odonnells-torquay-p3692363",
+    type: "LIVE PERFORMANCE",
+    dateObj: "2026-05-15T21:00:00"
+  },
 
-  { date: "28 Aug 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA",
-    link:"https://www.englishriviera.co.uk/food-and-drink/seamus-odonnells-torquay-p3692363",
-    dateObj: "2026-04-17T20:00:00",
-  type: "LIVE" },
+  { date: "29 May 2026 • 8:30PM", venue: "The Brunel Inn",
+    location: "83 Fore St, Saltash PL12 6AE",
+    link: "https://www.brunelsaltash.co.uk/",
+    type: "LIVE PERFORMANCE",
+    dateObj: "2026-05-29T20:30:00"
+  },
 
-  { date: "04 Sep 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA",
-    link:"https://www.englishriviera.co.uk/food-and-drink/seamus-odonnells-torquay-p3692363",
-      dateObj: "2026-04-17T20:00:00",
-    type: "LIVE" },
-    
-    {  date: "13th September 2026 7pm", venue: "Three Ferrets", location: "38 Charlotte Street, Plymouth Pl2 1RJ", type: "LIVE PERFORMANCE",
-      dateObj: "2026-04-17T20:00:00"
-    },
+  { date: "17th June 2026 6.30pm", venue: "Room 5",
+    location: "Unit 16, White River Place, Saint Austell PL25 5AZ",
+    link: "https://share.google/RhzjAXdC5lCCHqSi5",
+    type: "LIVE PERFORMANCE",
+    dateObj: "2026-06-17T18:30:00"
+  },
 
-    { date: "20 Nov 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar", location: "28 Victoria Parade, Torquay TQ2 5AA",
-    link:"https://www.englishriviera.co.uk/food-and-drink/seamus-odonnells-torquay-p3692363",
-      dateObj: "2026-04-17T20:00:00",
-      type: "LIVE PERFORMANCE" }
-      ];
+  { date: "15th July 2026 6.30pm", venue: "Room 5",
+    location: "Unit 16, White River Place, Saint Austell PL25 5AZ",
+    type: "LIVE PERFORMANCE",
+    dateObj: "2026-07-15T18:30:00"
+  },
 
+  { date: "24 Jul 2026 • 8:30PM", venue: "The Brunel Inn",
+    location: "83 Fore St, Saltash PL12 6AE",
+    link: "https://www.brunelsaltash.co.uk/",
+    type: "LIVE PERFORMANCE",
+    dateObj: "2026-07-24T20:30:00"
+  },
 
-    const container = document.getElementById("gig-list");
-  
-      const now = new Date();
+  { date: "07 Aug 2026 • 8:30PM", venue: "Albemarle Pub",
+    location: "Budshead Rd, Plymouth PL5 4DD",
+    link: "https://www.facebook.com/",
+    type: "LIVE",
+    dateObj: "2026-08-07T20:30:00"
+  },
 
-      let nextGig = null;
+  { date: "28 Aug 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar",
+    location: "28 Victoria Parade, Torquay TQ2 5AA",
+    link: "https://www.englishriviera.co.uk/",
+    type: "LIVE",
+    dateObj: "2026-08-28T21:00:00"
+  },
 
-      gigs.forEach(gig => {
-      const gigDate = new Date(gig.dateObj);
+  { date: "04 Sep 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar",
+    location: "28 Victoria Parade, Torquay TQ2 5AA",
+    link: "https://www.englishriviera.co.uk/",
+    type: "LIVE",
+    dateObj: "2026-09-04T21:00:00"
+  },
 
+  { date: "13th September 2026 7pm", venue: "Three Ferrets",
+    location: "38 Charlotte Street, Plymouth PL2 1RJ",
+    type: "LIVE PERFORMANCE",
+    dateObj: "2026-09-13T19:00:00"
+  },
+
+  { date: "20 Nov 2026 • 9:00PM", venue: "Seamus O’Donnells Irish Bar",
+    location: "28 Victoria Parade, Torquay TQ2 5AA",
+    link: "https://www.englishriviera.co.uk/",
+    type: "LIVE PERFORMANCE",
+    dateObj: "2026-11-20T21:00:00"
+  }
+];
+
+const container = document.getElementById("gig-list");
+
+// Sort gigs by date
+gigs.sort((a, b) => new Date(a.dateObj) - new Date(b.dateObj));
+
+// Find next gig
+const now = new Date();
+let nextGig = null;
+
+gigs.forEach(gig => {
+  const gigDate = new Date(gig.dateObj);
   if (gigDate > now) {
     if (!nextGig || gigDate < new Date(nextGig.dateObj)) {
       nextGig = gig;
@@ -346,41 +382,41 @@
   }
 });
 
-      function loadGigs() {
-        container.innerHTML = "";
+// Normalize today
+const today = new Date();
+today.setHours(0,0,0,0);
 
-      gigs.forEach(gig => {
-      const div = document.createElement("a");
-        div.className = "gig";
-        div.href = gig.link;
-        div.target = "_blank";
+// Render gigs
+gigs.forEach(gig => {
+  const gigDate = new Date(gig.dateObj);
+  gigDate.setHours(0,0,0,0);
 
-      div.innerHTML = `
-        <div class="left">
-          <div class="date">${gig.date}</div>
-          <div class="venue">${gig.venue}</div>
-          <div class="location">${gig.location}</div>
-        </div>
-        
-        
-        
-        <div class="tag">
-          ${
-          gig === nextGig
-          ? "🔥 NEXT SHOW"
-          : gig.type === "WITH BAND"
-          ? "BAND PERFORMANCE"  
-          : "🎤 LIVE PERFORMANCE"
-           }
-          </div>`;
+  const div = document.createElement("div");
+  div.classList.add("gig");
 
-      container.appendChild(div);
-    });
-    }
-    gigs.sort((a, b) => {
-  return new Date(a.dateObj) - new Date(b.dateObj);
-  });
-    loadGigs();
+  // Grey out past gigs
+  if (gigDate < today) {
+    div.classList.add("past");
+  }
+
+  div.innerHTML = `
+    <h3>${gig.venue}</h3>
+    <p>${gig.date}</p>
+    <p>${gig.location}</p>
+
+    <div class="tag">
+      ${
+        gig === nextGig
+        ? "🔥 NEXT SHOW"
+        : gig.type === "WITH BAND"
+        ? "BAND PERFORMANCE"
+        : "🎤 LIVE PERFORMANCE"
+      }
+    </div>
+  `;
+
+  container.appendChild(div);
+});
 </script>
 
 </body>
