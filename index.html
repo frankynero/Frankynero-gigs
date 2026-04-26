@@ -45,7 +45,7 @@
     .socials a {
       margin: 0 10px;
       text-decoration: none;
-      color: #00ffcc;
+      color: #0099cc;
       font-size: 14px;
     }
 
@@ -54,7 +54,7 @@
       margin-top: 25px;
       padding: 12px 20px;
       border-radius: 25px;
-      background: #00ffcc;
+      background: #0099cc;
       color: black;
       text-decoration: none;
       font-weight: 600;
@@ -173,7 +173,7 @@
             max-width: 600px;
             margin: 15px auto 30px;
             font-size: 14px;
-            color: #ccc990;
+            color: #009990;
             line-height: 1.6;
             }
             
@@ -273,6 +273,20 @@
 
     
 <script>
+  
+function getGigTag(gig, nextGig) {
+  if (gig === nextGig) {
+    return { text: "🔥 NEXT SHOW", className: "next" };
+  }
+
+  if (gig.type === "WITH BAND") {
+    return { text: "BAND PERFORMANCE", className: "band" };
+  }
+
+  return { text: "🎤 LIVE PERFORMANCE", className: "live" };
+}
+  
+  
 const gigs = [
   { date: "17 Apr 2026 • 8:00PM", venue: "Blockhouse Pub",
     location: "Devonport Rd, Stoke Village, Plymouth PL1 4DL",
@@ -372,6 +386,25 @@ gigs.sort((a, b) => new Date(a.dateObj) - new Date(b.dateObj));
 // Find next gig
 const now = new Date();
 let nextGig = null;
+
+
+
+gigs.sort((a, b) => {
+  const aDate = new Date(a.dateObj);
+  const bDate = new Date(b.dateObj);
+
+  const now = new Date();
+
+  const aPast = aDate < now;
+  const bPast = bDate < now;
+
+  if (aPast && !bPast) return 1;
+  if (!aPast && bPast) return -1;
+
+  return aDate - bDate;
+});
+
+
 
 gigs.forEach(gig => {
   const gigDate = new Date(gig.dateObj);
